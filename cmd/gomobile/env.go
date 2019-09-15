@@ -132,8 +132,8 @@ func envInit() (err error) {
 			env = append(env, "GOARM=7")
 			fallthrough
 		case "arm64":
-			clang, cflags, err = envClang("iphoneos")
-			cflags += " -miphoneos-version-min=" + buildIOSVersion
+			clang, cflags, err = envClang("macosx")
+			cflags += " -mmacosx-version-min=10.11"
 		case "386", "amd64":
 			clang, cflags, err = envClang("iphonesimulator")
 			cflags += " -mios-simulator-version-min=" + buildIOSVersion
